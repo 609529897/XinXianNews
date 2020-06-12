@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Row, Col} from 'antd'
 
-export default class MobileFooter extends Component{
-  render() {
+ const MobileFooter = () => {
     return(
       <footer>
         <Row>
@@ -14,5 +13,6 @@ export default class MobileFooter extends Component{
         </Row>
       </footer>
     )
-  }
 }
+
+export default MobileFooter

@@ -11,8 +11,22 @@
 .logo span{
   font-size: 24px;
   padding-left: 5px;
+  padding-top: 5px;
 }
 
 .footer{
   text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .logo img{
+    display: none;
+  }
+  .logo span{
+    width: 5px;
+  }
+}
+
+.register{
+  float: right;
 }

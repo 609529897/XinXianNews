@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Row, Col} from 'antd'
 
-export default class PCFooter extends Component{
-  render() {
+const PCFooter = () =>{
     return(
       <footer>
         <Row>
@@ -15,4 +14,5 @@ export default class PCFooter extends Component{
       </footer>
     )
   }
-}
+
+export default PCFooter

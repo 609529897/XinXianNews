@@ -8,6 +8,8 @@ html{
 }
 
 #mobileheader header {
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid #2db7f5;
   padding-left: 10px;
 }
@@ -17,8 +19,12 @@ html{
 }
 
 #mobileheader header span {
-  font-size: 35px;
+  font-size: 24px;
   vertical-align: top;
-  padding-left: 5px;
+  padding-left: 10px;
   color: #2db7f5;
+}
+
+.settingIcon{
+  margin-left: 160px;
 }

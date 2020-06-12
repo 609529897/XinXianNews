@@ -1,14 +1,16 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react'
 import MobileHeader from './mobile_header'
 import MobileFooter from './mobile_footer'
+import MobileTabs from './mobile_tabs'
 
-export default class MobileIndex extends Component {
-  render() {
+const MobileIndex = () => {
     return (
-      <Fragment>
+      <>
         <MobileHeader />
+        <MobileTabs />
         <MobileFooter />
-      </Fragment>
+      </>
     )
   }
-}
+
+export default MobileIndex
