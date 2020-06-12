@@ -30,3 +30,33 @@
 .register{
   float: right;
 }
+
+.rightContainer{
+  margin-top: 45px;
+  margin-left: 80px;
+  width: 400px;
+  height: 400px;
+  float: right;
+}
+
+.carousel img{
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .rightContainer{
+    display: none;
+  }
+}
+
+.ulList {
+  list-style: none;
+  font-size: 0.3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.liList {
+  margin: 5px auto;
+}
