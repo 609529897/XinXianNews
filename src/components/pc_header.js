@@ -79,6 +79,15 @@ const PCHeader = () => {
     setModelVisible(false)
     // })
   }
+  const renderError = (field) => {
+    if (field.touched && field.error) {
+      return (
+        <span className="SignInForm__error-text">
+          {field.error}
+        </span>
+      );
+    }
+  }
   // userShow: 登录/注册
   const userShow = hasLogined
     ? <Menu.Item key="logout" className="register">
