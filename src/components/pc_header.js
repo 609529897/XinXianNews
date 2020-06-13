@@ -109,7 +109,7 @@ const PCHeader = () => {
         <Col span={4}>
           <a href="/" className="logo">
             <img src={logo} alt="logo" />
-            <span>新鲜新闻</span>
+            <span>新鲜日报</span>
           </a>
         </Col>
         <Col span={16}>

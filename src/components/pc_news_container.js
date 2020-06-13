@@ -3,6 +3,7 @@ import { Row, Col, Tabs, Carousel } from 'antd'
 import imgA from '../static/a.jpg'
 import imgC from '../static/c.jpg'
 import PCNewsBlock from './pc_news_block'
+import PCWeatherBlock from './pc_weather_block'
 
 const { TabPane } = Tabs
 
@@ -22,18 +23,20 @@ const PCNewContainer = () => {
                   <img src={imgC} alt="summer" />
                 </div>
               </Carousel>
+              <PCWeatherBlock />
             </div>
           </div>
           <Tabs className="tabs_news">
             <TabPane tab="头条" key="1">
-            <PCNewsBlock count={5} type="top" width="100%" bordered="false"/>
+              <PCNewsBlock count={5} type="top" width="100%" bordered="false" />
             </TabPane>
             <TabPane tab="国际" key="2">
-            <PCNewsBlock count={5} type="guoji" width="100%" bordered="false"/>
+              <PCNewsBlock count={5} type="guoji" width="100%" bordered="false" />
             </TabPane>
           </Tabs>
         </Col>
-        <Col span={2}></Col>
+        <Col span={2}>
+        </Col>
       </Row>
     </>
   )

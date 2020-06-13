@@ -66,7 +66,7 @@ const MobileHeader = () => {
     <div id="mobileheader">
       <header>
         <img src={logo} alt="logo" />
-        <span>新鲜新闻</span>
+        <span>新鲜日报</span>
         {userShow}
       </header>
       {     // 登录/注册表单页
