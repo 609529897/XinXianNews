@@ -18,10 +18,10 @@ const PCNewContainer = () => {
             <div className="carousel">
               <Carousel autoplay>
                 <div>
-                  <img src={imgA} alt="summer" />
+                  <img src={imgA} alt="花" />
                 </div>
                 <div>
-                  <img src={imgC} alt="summer" />
+                  <img src={imgC} alt="花" />
                 </div>
               </Carousel>
               <PCWeatherBlock />

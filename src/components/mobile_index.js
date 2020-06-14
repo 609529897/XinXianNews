@@ -4,13 +4,13 @@ import MobileFooter from './mobile_footer'
 import MobileTabs from './mobile_tabs'
 
 const MobileIndex = () => {
-    return (
-      <>
-        <MobileHeader />
-        <MobileTabs />
-        <MobileFooter />
-      </>
-    )
-  }
+  return (
+    <>
+      <MobileHeader />
+      <MobileTabs />
+      <MobileFooter />
+    </>
+  )
+}
 
 export default MobileIndex

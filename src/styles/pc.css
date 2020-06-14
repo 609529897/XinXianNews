@@ -28,7 +28,8 @@
 }
 
 .register{
-  float: right;
+  position: relative;
+  left: 30%;
 }
 
 .rightContainer{
@@ -42,7 +43,10 @@
 .carousel img{
   width: 100%;
   height: 100%;
-  margin-bottom: 45px;
+}
+
+.searchWeatherForm{
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 800px) {
@@ -53,7 +57,7 @@
 
 .ulList {
   list-style: none;
-  font-size: 0.35rem;
+  font-size: 0.30rem;
   margin: 0;
   padding: 0;
 }
@@ -133,7 +137,7 @@
 }
 
 .footer .footer-top div {
-  font-size: 16px;
+  font-size: 14px;
   flex: 30%;
   float: left;
   margin-left: 50px;
@@ -141,12 +145,24 @@
 
 .footer-main {
   color: white;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .footer .footer-main span{
-  font-size: 16px;
+  font-size: 10px;
   flex: 30%;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+@media screen and (min-height: 1000px) {
+  .footer{
+    display: none;
+  }
+}
+
+.imageBlock{
+  float: left;
   margin-left: 50px;
   cursor: pointer;
 }

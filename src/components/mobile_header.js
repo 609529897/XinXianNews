@@ -46,7 +46,7 @@ const MobileHeader = () => {
     setModelVisible(false)
     // })
   }
-    const handleLoginSubmit = e => {
+  const handleLoginSubmit = e => {
     e.preventDefault()
     let username = loginUsernameRef.current.state.value
     let password = loginPasswordRef.current.state.value
@@ -80,16 +80,16 @@ const MobileHeader = () => {
         >
           <Tabs defaultActiveKey="1" type="card">
             <TabPane tab="登录" key="1">
-                  <Form>
-                  <FormItem label="账户">
-                      <Input placeholder="请输入您的账号" ref={loginUsernameRef} />
-                    </FormItem>
-                    <FormItem label="密码">
-                      <Input type="password" placeholder="请输入您的密码" ref={loginPasswordRef} />
-                    </FormItem>                    
-                    <Button onClick={e => handleLoginSubmit(e)} type="primary" htmlType="submit">登录</Button>
-                  </Form>
-                </TabPane>
+              <Form>
+                <FormItem label="账户">
+                  <Input placeholder="请输入您的账号" ref={loginUsernameRef} />
+                </FormItem>
+                <FormItem label="密码">
+                  <Input type="password" placeholder="请输入您的密码" ref={loginPasswordRef} />
+                </FormItem>
+                <Button onClick={e => handleLoginSubmit(e)} type="primary" htmlType="submit">登录</Button>
+              </Form>
+            </TabPane>
             <TabPane tab="注册" key="2">
               <Form>
                 <FormItem label="账户">

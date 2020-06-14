@@ -24,18 +24,19 @@ const PCNewsImageBlock = ({ rows, channel, propWidth, propsImageWidth }) => {
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
   }
-  const newsList = news.length
+  const newsList = news
     ? news.map((newsItem, index) => (
       <div key={index} className="imageBlock">
         {/* <Link to={`detail/${newsItem.uniquekey}`} target="_blank"> */}
-          <div className="custom-image">
-            <img style={styleImage} alt="新闻" src={newsItem.pic} />
-          </div>
-          <div className="custom-card">
-            <h3 style={styleH3}>{newsItem.title}</h3>
-            <p key="1">{newsItem.src}</p>
-            <p key="2">{newsItem.time}</p>
-          </div>
+        <div className="custom-image">
+          <img style={styleImage} alt="新闻" src={newsItem.pic} />
+        </div>
+        <div className="custom-card">
+          <h3 style={styleH3}>{newsItem.title}</h3>
+          <p key="1">{newsItem.category}</p>
+          <p key="2">{newsItem.src}</p>
+          <p key="3">{newsItem.time}</p>
+        </div>
         {/* </Link> */}
       </div>
     ))
