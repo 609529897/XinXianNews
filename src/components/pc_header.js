@@ -1,5 +1,5 @@
 // React, Router
-import React, { useState, useRef, Fragment } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 // static
@@ -30,11 +30,16 @@ const PCHeader = () => {
   const [current, setCurrent] = useState("top")
   const [modelVisible, setModelVisible] = useState(false)
   const [hasLogined, setHasLogined] = useState(false)
-  const usernameRef = useRef()
-  const passwordRef = useRef()
-  const confirmPasswordRef = useRef()
-  const loginUsernameRef = useRef()
-  const loginPasswordRef = useRef()
+  const [{ username, password, confirmPassword }, setUserStaet] = useState({
+    username: '',
+    password: '',
+    confirmPassword: '',
+  })
+  console.log(username)
+  const [{ loginUsername, loginPassword }, setLoginUserState] = useState({
+    loginUsername: '',
+    loginPassword: '',
+  })
 
   const [{ userNickName, userId }, setUserState] = useState({
     userNickName: '',
@@ -55,10 +60,6 @@ const PCHeader = () => {
   }
   const handleSubmit = e => {
     e.preventDefault()
-
-    let username = usernameRef.current.state.value
-    let password = passwordRef.current.state.value
-    let confirmPassword = confirmPasswordRef.current.state.value
     // Axions.get(`https://....com?username=${username}&password=${password}&confirmPassword=${confirmPassword}`)
     // .then(response => response.json())
     // .then(data => {
@@ -69,8 +70,6 @@ const PCHeader = () => {
   }
   const handleLoginSubmit = e => {
     e.preventDefault()
-    let username = loginUsernameRef.current.state.value
-    let password = loginPasswordRef.current.state.value
     // Axions.get(`https://....com?username=${username}&password=${password}`)
     // .then(response => response.json())
     // .then(data => {
@@ -154,10 +153,10 @@ const PCHeader = () => {
                 <TabPane tab="登录" key="1">
                   <Form>
                     <FormItem label="账户">
-                      <Input placeholder="请输入您的账号" ref={loginUsernameRef} />
+                      <Input placeholder="请输入您的账号" onChange={(e) => setUserStaet({ loginUsername: e.target.value })} />
                     </FormItem>
                     <FormItem label="密码">
-                      <Input type="password" placeholder="请输入您的密码" ref={loginPasswordRef} />
+                      <Input type="password" placeholder="请输入您的密码" onChange={(e) => setUserStaet({ loginPassword: e.target.value })} />
                     </FormItem>
                     <Button onClick={e => handleLoginSubmit(e)} type="primary" htmlType="submit">登录</Button>
                   </Form>
@@ -165,13 +164,13 @@ const PCHeader = () => {
                 <TabPane tab="注册" key="2">
                   <Form>
                     <FormItem label="账户">
-                      <Input placeholder="请输入您的账号" ref={usernameRef} />
+                      <Input placeholder="请输入您的账号" onChange={(e) => setUserStaet({ username: e.target.value })} />
                     </FormItem>
                     <FormItem label="密码">
-                      <Input type="password" placeholder="请输入您的密码" ref={passwordRef} />
+                      <Input type="password" placeholder="请输入您的密码" onChange={(e) => setUserStaet({ password: e.target.value })} />
                     </FormItem>
                     <FormItem label="确认密码">
-                      <Input type="password" placeholder="请再次输入您的密码" ref={confirmPasswordRef} />
+                      <Input type="password" placeholder="请再次输入您的密码" onChange={(e) => setUserStaet({ confirmPassword: e.target.value })} />
                     </FormItem>
                     <Button onClick={e => handleSubmit(e)} type="primary" htmlType="submit">注册</Button>
                   </Form>

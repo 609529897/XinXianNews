@@ -1,63 +1,42 @@
-import React, { useState, useRef } from 'react'
-// import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { Card } from 'antd'
 import { CloudOutlined } from '@ant-design/icons'
 import "../styles/pc.css"
 
-const data = {
-  "today": {
-    "temperature": "22℃~33℃",
-    "weather": "晴天",
-    "weather_id": {
-      "fa": "04",
-      "fb": "01"
-    },
-    "wind": "西北风3-5级",
-    "week": "星期六",
-    "city": "北京",
-    "date_y": "2020年06月13日",
-    "dressing_index": "炎热",
-    "dressing_advice": "天气炎热，建议着短衫、短裙、短裤、薄型T恤衫等清凉夏季服装。",
-    "uv_index": "弱",
-    "comfort_index": "",
-    "wash_index": "较适宜",
-    "travel_index": "较适宜",
-    "exercise_index": "较适宜",
-    "drying_index": ""
-  }
-}
-
 const PCWeatherBlock = () => {
-  const [cityWeather, setCityWeather] = useState([data])
+  const [cityname, setCityname] = useState("北京")
+  const [cityWeather, setCityWeather] = useState()
+  useEffect(() => {
+    searchCityWeather()
+  }, [])
   const searchCityWeather = () => {
-    // axios.get("../api/cityWeather.json").then(data => {
-    setCityWeather()
-    // })
+    axios.get(`hefeng/s6/weather/now?location=${cityname}&key=5372983018b94446a345169af1769414`)
+    .then(data => {
+      setCityWeather(data.data.HeWeather6[0].now)
+    }).catch(error => console.log(`pc_weather error -> : ${error}`))
   }
-  const showCityWeather = cityWeather.length
-    ? cityWeather.map((wheatherItem, index) => {
-      return (
-        <ul className="wheatherUlList" key={index}>
-          <CloudOutlined className="cloudIcon" style={{color:"SkyBlue", fontSize:0.5 + "rem"}}/>
-          <li>
-          温度：{wheatherItem.today.temperature}
-         </li>
-         <li>
-           天气：{wheatherItem.today.weather}
-         </li>
-         <li>
-          风向：{wheatherItem.today.wind}
-         </li>
-         <li>
-           衣着：{wheatherItem.today.dressing_advice}
-         </li>
-        </ul>
-      )
-    })
+  const showCityWeather = cityWeather
+    ?
+    <ul className="wheatherUlList">
+      <Card title="今日天气">
+        <CloudOutlined className="cloudIcon" style={{ color: "SkyBlue", fontSize: 0.5 + "rem" }} />
+        <li key="1">城市：{cityname}</li>
+        <li key="2">温度：{cityWeather.tmp}°C</li>
+        <li key="3">天气：{cityWeather.cond_txt}</li>
+        <li key="4">风向：{cityWeather.wind_dir}</li>
+        <li key="5">风力：{cityWeather.wind_sc}</li>
+        <li key="6">相对湿度：{cityWeather.hum}</li>
+        <li key="7">1小时降水量：{cityWeather.pcpn}</li>
+        <li key="8">10分钟降水量：{cityWeather.pcpn_10m}</li>
+        <li key="9">大气压强：{cityWeather.pres}</li>
+      </Card>
+    </ul>
     : "没有获取到任何天气相关信息！"
   return (
     <>
-      <form>
-        <input type="text" defaultValue="北京"></input>
+      <form className="searchWeatherForm">
+        <input type="text" defaultValue={cityname} onChange={(e) => setCityname(e.target.value)}></input>
         <input type="button" value="查询" onClick={searchCityWeather}></input>
       </form>
       {showCityWeather}
@@ -66,3 +45,13 @@ const PCWeatherBlock = () => {
 }
 
 export default PCWeatherBlock
+
+
+// <Timeline>
+// <Timeline.Item>创建服务现场 2015-09-01</Timeline.Item>
+// <Timeline.Item>初步排除网络异常 2015-09-01</Timeline.Item>
+// <Timeline.Item>技术测试异常 2015-09-01</Timeline.Item>
+// <Timeline.Item>网络异常正在修复 2015-09-01</Timeline.Item>
+// <Timeline.Item>技术测试异常 2015-09-01</Timeline.Item>
+// <Timeline.Item>网络异常正在修复 2015-09-01</Timeline.Item>
+// </Timeline>
