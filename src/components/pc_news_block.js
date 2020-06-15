@@ -17,7 +17,7 @@ const PCNewsBlock = props => {
   const newsList = news.length
     ? news.map((newsItem, index) => (
       <li key={index} className="liList">
-        <Link to={{ pathname: '/details/', search: `uniquekey=${newsItem.uniquekey}` }} target="_blank">
+        <Link to={`/datails/${newsItem.uniquekey}`} target="_blank">
           {newsItem.title}
         </Link>
       </li>

@@ -7,7 +7,8 @@ import PCFooter from './pc_footer'
 const PCNewsDetails = (props) => {
   const [newsItem, setNewsItem] = useState()
   const createMarkup = () => {
-    return {__html: newsItem.pageContent}
+    // return {__html: newsItem.pageContent}
+    console.log(newsItem)
   }
   useEffect(() => {
     Axios.get(`api/toutiao/index?&key=f9867413f6c95afe5635532ee1e9846c`)
@@ -20,7 +21,6 @@ const PCNewsDetails = (props) => {
       // return
       document.title = newsItem.title + " - 新鲜日报"
     })
-    console.log(props.history.location.search)
   },[])
   return (
     <>
@@ -29,7 +29,6 @@ const PCNewsDetails = (props) => {
       <Col span={2}></Col>
       <Col span={14} className="newsItem_container">
         <div className="article_container" dangerouslySetInnerHTML={createMarkup()}></div>
-        <div>666</div>
       </Col>
       <Col span={6}></Col>
       <Col span={2}></Col>
