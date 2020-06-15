@@ -35,16 +35,11 @@ const PCHeader = () => {
     password: '',
     confirmPassword: '',
   })
-  console.log(username)
   const [{ loginUsername, loginPassword }, setLoginUserState] = useState({
     loginUsername: '',
     loginPassword: '',
   })
 
-  const [{ userNickName, userId }, setUserState] = useState({
-    userNickName: '',
-    userId: '',
-  })
   // state = {
   //   action: 'login',
   // }
@@ -90,7 +85,7 @@ const PCHeader = () => {
   // userShow: 登录/注册
   const userShow = hasLogined
     ? <Menu.Item key="logout" className="register">
-      <Button type="primary" htmlType="button">{userNickName}</Button>
+      <Button type="primary" htmlType="button">{loginUsername}</Button>
       &nbsp;&nbsp;
       <Link target="_blank">
         <Button type="dashed" htmlType="button">个人中心</Button>

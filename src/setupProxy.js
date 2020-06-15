@@ -5,7 +5,7 @@ module.exports = function (app) {
       '/api',
       {
         target: 'http://v.juhe.cn',
-        pathRewrite: { '^/api': '' },
+        pathRewrite: { '^details/api': '' },
         changeOrigin: true,     // target是域名的话，需要这个参数，
         secure: false,
       }
