@@ -36,10 +36,10 @@ const PCNewContainer = () => {
             </TabPane>
           </Tabs>
           <div>
-            <PCNewsImageBlock rows={6} channel={'头条'} propWidth="100%" propsImageWidth="112px" />
-            <PCNewsImageBlock rows={6} channel={'体育'} propWidth="100%" propsImageWidth="112px" />
-            <PCNewsImageBlock rows={6} channel={'NBA'} propWidth="100%" propsImageWidth="112px" />
-            <PCNewsImageBlock rows={6} channel={'娱乐'} propWidth="100%" propsImageWidth="112px" />
+            <PCNewsImageBlock rows={6} channel={'头条'} propWidth="100%" propsImageWidth="140px" />
+            <PCNewsImageBlock rows={6} channel={'体育'} propWidth="100%" propsImageWidth="140px" />
+            <PCNewsImageBlock rows={6} channel={'NBA'} propWidth="100%" propsImageWidth="140px" />
+            <PCNewsImageBlock rows={6} channel={'娱乐'} propWidth="100%" propsImageWidth="140px" />
           </div>
         </Col>
         <Col span={2}>

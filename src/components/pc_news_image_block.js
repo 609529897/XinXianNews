@@ -20,14 +20,15 @@ const PCNewsImageBlock = ({ rows, channel, propWidth, propsImageWidth }) => {
 
   const styleH3 = {
     width: propsImageWidth,
+    fontSize: "0.2rem",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
+    // whiteSpace: "nowrap",
   }
   const newsList = news
     ? news.map((newsItem, index) => (
       <div key={index} className="imageBlock">
-        {/* <Link to={`detail/${newsItem.uniquekey}`} target="_blank"> */}
+        {/* <Link to={`details/${newsItem.uniquekey}`} target="_blank"> */}
         <div className="custom-image">
           <img style={styleImage} alt="新闻" src={newsItem.pic} />
         </div>
