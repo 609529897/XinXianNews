@@ -31,7 +31,7 @@ const MobileNewsDetails = (props) => {
         <Col span={2}></Col>
         <Col span={20} className="newsItem_container">
           <div className="article_container" dangerouslySetInnerHTML={createMarkup()}></div>
-          <CommonComments />
+          < CommonComments />
         </Col>
         <Col span={2}></Col>
       </Row>
