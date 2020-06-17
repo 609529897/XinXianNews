@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Row, Col, Form, Button, Card, Input, notification } from 'antd'
+const { TextArea } = Input
 
 const CommonComments = (props) => {
   const [comments, setComments] = useState('')
@@ -27,7 +28,7 @@ const CommonComments = (props) => {
         <Col span="24">
           <Form>
             <Form.Item label="您的评论">
-              <Input type="textarea" placeholder="评论..." onChange={(e) => commentVale = e.target.value} />
+              <TextArea rows={6} placeholder="评论..." onChange={(e) => commentVale = e.target.value} />
             </Form.Item>
             <Button onClick={handleSubmit} type="primary" htmlType="button">提交评论</Button>
             &nbsp;&nbsp;

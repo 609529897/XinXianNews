@@ -13,16 +13,11 @@ const PCNewsDetails = (props) => {
     console.log(newsItem)
   }
   useEffect(() => {
-    Axios.get(`api/toutiao/index?&key=f9867413f6c95afe5635532ee1e9846c`)
-    .then(data => { console.log(data)
-      // if(data.data.result.data.uniquekey === props.params.uniquekey) {
-      //   console.log(data.data.result.data.uniquekey)
-      //   setNewsItem(data.data.result.data)
-      //   alert(666)
-      // }
-      // return
-      document.title = newsItem.title + " - 新鲜日报"
-    })
+    Axios.get(`api/toutiao/index?type="top"&key=f9867413f6c95afe5635532ee1e9846c`)
+      .then(data => { console.log(data) })
+      .catch(error => console.log(`pc_news_details: -> ${error}`))
+      // document.title = newsItem.title + " - 新鲜日报"
+    // })
   },[])
   return (
     <>

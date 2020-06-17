@@ -30,7 +30,7 @@ const PCHeader = () => {
   const [current, setCurrent] = useState("top")
   const [modelVisible, setModelVisible] = useState(false)
   const [hasLogined, setHasLogined] = useState(false)
-  const [{ username, password, confirmPassword }, setUserStaet] = useState({
+  const [{ username, password, confirmPassword }, setUserState] = useState({
     username: '',
     password: '',
     confirmPassword: '',
@@ -39,6 +39,7 @@ const PCHeader = () => {
     loginUsername: '',
     loginPassword: '',
   })
+
 
   // state = {
   //   action: 'login',
@@ -71,27 +72,31 @@ const PCHeader = () => {
     // setUserState({userNickName:"jack", userId:"1"})
     message.success("登录成功！")
     setModelVisible(false)
+    setHasLogined(true)
     // })
   }
-  const renderError = (field) => {
-    if (field.touched && field.error) {
-      return (
-        <span className="SignInForm__error-text">
-          {field.error}
-        </span>
-      );
-    }
-  }
+  // const renderError = (field) => {
+  //   if (field.touched && field.error) {
+  //     return (
+  //       <span className="SignInForm__error-text">
+  //         {field.error}
+  //       </span>
+  //     );
+  //   }
+  // }
   // userShow: 登录/注册
+  const handleLogOut = () => {
+    setHasLogined(false)
+  }
   const userShow = hasLogined
     ? <Menu.Item key="logout" className="register">
-      <Button type="primary" htmlType="button">{loginUsername}</Button>
+      {/* <Button type="primary" htmlType="button">{loginUsername}</Button> */}
       &nbsp;&nbsp;
       <Link target="_blank">
         <Button type="dashed" htmlType="button">个人中心</Button>
       </Link>
       &nbsp;&nbsp;
-      <Button type="ghost" htmlType="button">退出</Button>
+      <Button type="dashed" onClick={handleLogOut} htmlType="button">退出</Button>
     </Menu.Item>
     : <Menu.Item key="register" className="register">
       <AppstoreOutlined />注册/登录
@@ -148,10 +153,10 @@ const PCHeader = () => {
                 <TabPane tab="登录" key="1">
                   <Form>
                     <FormItem label="账户">
-                      <Input placeholder="请输入您的账号" onChange={(e) => setUserStaet({ loginUsername: e.target.value })} />
+                      <Input placeholder="请输入您的账号" onChange={(e) => setLoginUserState({ loginUsername: e.target.value })} />
                     </FormItem>
                     <FormItem label="密码">
-                      <Input type="password" placeholder="请输入您的密码" onChange={(e) => setUserStaet({ loginPassword: e.target.value })} />
+                      <Input type="password" placeholder="请输入您的密码" onChange={(e) => setLoginUserState({ loginPassword: e.target.value })} />
                     </FormItem>
                     <Button onClick={e => handleLoginSubmit(e)} type="primary" htmlType="submit">登录</Button>
                   </Form>
@@ -159,13 +164,13 @@ const PCHeader = () => {
                 <TabPane tab="注册" key="2">
                   <Form>
                     <FormItem label="账户">
-                      <Input placeholder="请输入您的账号" onChange={(e) => setUserStaet({ username: e.target.value })} />
+                      <Input placeholder="请输入您的账号" onChange={(e) => setUserState({ username: e.target.value })} />
                     </FormItem>
                     <FormItem label="密码">
-                      <Input type="password" placeholder="请输入您的密码" onChange={(e) => setUserStaet({ password: e.target.value })} />
+                      <Input type="password" placeholder="请输入您的密码" onChange={(e) => setUserState({ password: e.target.value })} />
                     </FormItem>
                     <FormItem label="确认密码">
-                      <Input type="password" placeholder="请再次输入您的密码" onChange={(e) => setUserStaet({ confirmPassword: e.target.value })} />
+                      <Input type="password" placeholder="请再次输入您的密码" onChange={(e) => setUserState({ confirmPassword: e.target.value })} />
                     </FormItem>
                     <Button onClick={e => handleSubmit(e)} type="primary" htmlType="submit">注册</Button>
                   </Form>

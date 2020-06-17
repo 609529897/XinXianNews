@@ -4,8 +4,7 @@ import Axios from 'axios'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const PCNewsBlock = props => {
-  const { type } = props
+const PCNewsBlock = ({ type }) => {
   const [news, setNews] = useState([])
   useEffect(() => {
     Axios.get(`api/toutiao/index?type=${type}&key=f9867413f6c95afe5635532ee1e9846c`)
