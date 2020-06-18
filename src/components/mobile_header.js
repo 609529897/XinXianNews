@@ -1,7 +1,7 @@
 import React, { useState, useonChange } from 'react'
 import logo from '../static/logo.png'
 import '../styles/mobile.css'
-import { SettingOutlined } from '@ant-design/icons'
+import { SettingOutlined, HomeOutlined } from '@ant-design/icons'
 import {
   Row,
   Col,
@@ -14,6 +14,7 @@ import {
   Checkbox,
   Modal
 } from 'antd'
+import { Link } from 'react-router-dom'
 const { Item: FormItem } = Form
 const { TabPane } = Tabs
 
@@ -52,17 +53,23 @@ const MobileHeader = () => {
     // setUserState({userNickName:"jack", userId:"1"})
     message.success("登录成功！")
     setModelVisible(false)
+    setHasLogined(false)
     // })
   }
   const userShow = hasLogined
     ?
     <SettingOutlined className="settingIcon" onClick={() => setModelVisible(true)} />
-    : ""
+    :
+    <Link to={'/usercenter'}>
+      <HomeOutlined className="settingIcon" />
+    </Link>
   return (
     <div id="mobileheader">
       <header>
         <img src={logo} alt="logo" />
-        <span>新鲜日报</span>
+        <Link to={'/'}>
+          <span>新鲜日报</span>
+        </Link>
         {userShow}
       </header>
       {     // 登录/注册表单页

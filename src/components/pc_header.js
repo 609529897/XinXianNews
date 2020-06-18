@@ -92,7 +92,7 @@ const PCHeader = () => {
     ? <Menu.Item key="logout" className="register">
       {/* <Button type="primary" htmlType="button">{loginUsername}</Button> */}
       &nbsp;&nbsp;
-      <Link target="_blank">
+      <Link to={'/usercenter'} target="_blank">
         <Button type="dashed" htmlType="button">个人中心</Button>
       </Link>
       &nbsp;&nbsp;

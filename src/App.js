@@ -1,12 +1,14 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+import MediaQuery from 'react-responsive'
 import PCIndex from './components/pc_index'
 import MobileIndex from './components/mobile_index'
 import PCNewsDetails from './components/pc_news_details'
 import MobileNewsDetails from './components/mobile_news_details'
-import { createBrowserHistory } from 'history'
+import PCUserCenter from './components/pc_usercenter'
+import MobileserCenter from './components/mobile_usercenter'
 import './styles/App.css'
-import MediaQuery from 'react-responsive'
 const history = createBrowserHistory()
 
 const App = () => {
@@ -17,6 +19,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={PCIndex} />
             <Route path="/datails/:aid" component={PCNewsDetails} />
+            <Route path="/usercenter" component={PCUserCenter} />
           </Switch>
         </Router>
       </MediaQuery>
@@ -25,6 +28,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={MobileIndex} />
             <Route path="/datails/:aid" component={MobileNewsDetails} />
+            <Route path="/usercenter" component={MobileserCenter} />
           </Switch>
         </Router>
       </MediaQuery>
