@@ -27,6 +27,7 @@ const CommonComments = (props) => {
       <Row>
         <Col span="24">
           <Form>
+            {commitList}
             <Form.Item label="您的评论">
               <TextArea rows={6} placeholder="评论..." onChange={(e) => commentVale = e.target.value} />
             </Form.Item>

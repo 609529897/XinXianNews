@@ -13,12 +13,10 @@ const PCNewsDetails = (props) => {
     console.log(newsItem)
   }
   useEffect(() => {
-    Axios.get(`api/toutiao/index?type="top"&key=f9867413f6c95afe5635532ee1e9846c`)
-      .then(data => { console.log(data) })
-      .catch(error => console.log(`pc_news_details: -> ${error}`))
-      // document.title = newsItem.title + " - 新鲜日报"
-    // })
-  },[])
+    Axios.get(`api/toutiao/index?type=top&key=f9867413f6c95afe5635532ee1e9846c`)
+      .then(data => { console.log(data.data.result.data) })
+      .catch(error => console.log(`pc_news_block: -> ${error}`))
+  }, [])
   return (
     <>
     <PCHeader />
@@ -26,11 +24,10 @@ const PCNewsDetails = (props) => {
       <Col span={2}></Col>
       <Col span={14} className="newsItem_container">
         <div className="article_container" dangerouslySetInnerHTML={createMarkup()}></div>
-        <hr />
         <CommonComments />
       </Col>
       <Col span={6}>
-      <PCNewsImageBlock rows={6} channel={'头条'} propWidth="100%" propsImageWidth="140px" />
+      <PCNewsImageBlock rows={2} channel={'头条'} propWidth="100%" propsImageWidth="140px" />
       </Col>
       <Col span={2}></Col>
     </Row>

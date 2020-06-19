@@ -12,13 +12,15 @@ const PCNewsBlock = ({ type }) => {
       .catch(error => console.log(`pc_news_block: -> ${error}`))
   }, [type])
 
-
   const newsList = news.length
     ? news.map((newsItem, index) => (
       <li key={index} className="liList">
-        <Link to={`/datails/${newsItem.uniquekey}`} target="_blank">
-          {newsItem.title}
-        </Link>
+        <a href={`${newsItem.url}`} target="_blank">
+        {newsItem.title}
+        </a>
+        {/* <Link to={`/datails/${newsItem.uniquekey}`} target="_blank">
+          
+        </Link> */}
       </li>
     ))
     : '没有加载到任何新闻, 可能是两种原因：第一种，免费 API 请求次数到达限制，第二种，您没有连接网络！'

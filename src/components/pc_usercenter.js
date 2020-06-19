@@ -72,6 +72,8 @@ const PCUserCenter = () => {
               </div>
             </TabPane>
             <TabPane tab="头像设置" key="3">
+              <div>尽情期待...</div>
+              <hr />
               <div className="clearfix">
                 <Upload {...props}>
                   <Button>

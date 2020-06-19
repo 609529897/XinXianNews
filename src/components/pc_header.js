@@ -41,9 +41,6 @@ const PCHeader = () => {
   })
 
 
-  // state = {
-  //   action: 'login',
-  // }
 
   // 点击相应按钮聚焦到相应按钮
   const handleClick = e => {
@@ -59,7 +56,6 @@ const PCHeader = () => {
     // Axions.get(`https://....com?username=${username}&password=${password}&confirmPassword=${confirmPassword}`)
     // .then(response => response.json())
     // .then(data => {
-    setUserState({ userNickName: "jack", userId: "1" })
     message.success("注册成功！")
     setModelVisible(false)
     // })
@@ -69,28 +65,17 @@ const PCHeader = () => {
     // Axions.get(`https://....com?username=${username}&password=${password}`)
     // .then(response => response.json())
     // .then(data => {
-    // setUserState({userNickName:"jack", userId:"1"})
     message.success("登录成功！")
     setModelVisible(false)
     setHasLogined(true)
     // })
   }
-  // const renderError = (field) => {
-  //   if (field.touched && field.error) {
-  //     return (
-  //       <span className="SignInForm__error-text">
-  //         {field.error}
-  //       </span>
-  //     );
-  //   }
-  // }
-  // userShow: 登录/注册
   const handleLogOut = () => {
     setHasLogined(false)
   }
   const userShow = hasLogined
     ? <Menu.Item key="logout" className="register">
-      {/* <Button type="primary" htmlType="button">{loginUsername}</Button> */}
+      <Button type="primary" htmlType="button">已登录</Button>
       &nbsp;&nbsp;
       <Link to={'/usercenter'} target="_blank">
         <Button type="dashed" htmlType="button">个人中心</Button>
@@ -99,6 +84,7 @@ const PCHeader = () => {
       <Button type="dashed" onClick={handleLogOut} htmlType="button">退出</Button>
     </Menu.Item>
     : <Menu.Item key="register" className="register">
+      <Button type="primary" htmlType="button">未登录</Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <AppstoreOutlined />注册/登录
       </Menu.Item>
   return (
@@ -113,7 +99,7 @@ const PCHeader = () => {
         </Col>
         <Col span={16}>
           <Menu onClick={e => handleClick(e)} selectedKeys={[current]} mode="horizontal">
-            <Menu.Item key="top">
+            {/* <Menu.Item key="top">
               <AppstoreOutlined /> 热门
                </Menu.Item>
             <Menu.Item key="tiyu">
@@ -136,7 +122,7 @@ const PCHeader = () => {
                </Menu.Item>
             <Menu.Item key="junshi">
               <AppstoreOutlined /> 军事
-               </Menu.Item>
+               </Menu.Item> */}
             {userShow}
           </Menu>
           {

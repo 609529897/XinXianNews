@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Card } from 'antd'
+import { Card, message } from 'antd'
 import { CloudOutlined } from '@ant-design/icons'
 import "../styles/pc.css"
 
@@ -37,7 +37,7 @@ const PCWeatherBlock = () => {
     <>
       <form className="searchWeatherForm">
         <input type="text" defaultValue={cityname} onChange={(e) => setCityname(e.target.value)}></input>
-        <input type="button" value="查询" onClick={searchCityWeather}></input>
+        <input type="button" value="查询" onClick={() => {searchCityWeather(); message.success("天气信息更新成功！")}}></input>
       </form>
       {showCityWeather}
     </>

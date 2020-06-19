@@ -9,7 +9,7 @@ const PCNewsImageBlock = ({ rows, channel, propWidth, propsImageWidth }) => {
   useEffect(() => {
     Axios.get(`bin/news/get?&channel=${channel}&num=${rows}&appkey=37f764932fa9274d`)
       .then(data => setNews(data.data.result.list))
-  }, [])
+  }, [channel, rows])
 
 
   const styleImage = {
