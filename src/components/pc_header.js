@@ -58,6 +58,7 @@ const PCHeader = () => {
     // .then(data => {
     message.success("注册成功！")
     setModelVisible(false)
+    setHasLogined(true)
     // })
   }
   const handleLoginSubmit = e => {

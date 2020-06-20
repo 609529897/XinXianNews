@@ -8,6 +8,7 @@ import PCNewsDetails from './components/pc_news_details'
 import MobileNewsDetails from './components/mobile_news_details'
 import PCUserCenter from './components/pc_usercenter'
 import MobileserCenter from './components/mobile_usercenter'
+import PCDetails_1 from './components/pc_details_1'
 import './styles/App.css'
 const history = createBrowserHistory()
 
@@ -20,6 +21,7 @@ const App = () => {
             <Route exact path="/" component={PCIndex} />
             <Route path="/datails/:aid" component={PCNewsDetails} />
             <Route path="/usercenter" component={PCUserCenter} />
+            <Route path="/details_1/:title/:channel/:rows" component={PCDetails_1} />
           </Switch>
         </Router>
       </MediaQuery>
@@ -32,7 +34,7 @@ const App = () => {
           </Switch>
         </Router>
       </MediaQuery>
-    </div >
+    </div>
   )
 }
 

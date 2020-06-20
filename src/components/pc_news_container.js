@@ -12,8 +12,8 @@ const PCNewContainer = () => {
   return (
     <>
       <Row>
-        <Col span={2}></Col>
-        <Col span={20}>
+        <Col span={3}></Col>
+        <Col span={18}>
           <div className="rightContainer">
             <div className="carousel">
               <Carousel autoplay>
@@ -66,7 +66,7 @@ const PCNewContainer = () => {
             <PCNewsImageBlock rows={6} channel={'娱乐'} propWidth="100%" propsImageWidth="140px" />
           </div>
         </Col>
-        <Col span={2}>
+        <Col span={3}>
         </Col>
       </Row>
     </>
