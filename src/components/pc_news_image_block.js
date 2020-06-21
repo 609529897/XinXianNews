@@ -10,7 +10,6 @@ const PCNewsImageBlock = ({ rows, channel, propWidth, propsImageWidth }) => {
     Axios.get(`bin/news/get?&channel=${channel}&num=${rows}&appkey=37f764932fa9274d`)
       .then(data => setNews(data.data.result.list))
   }, [channel, rows])
-
   const styleImage = {
     display: "block",
     width: propsImageWidth,
@@ -27,7 +26,7 @@ const PCNewsImageBlock = ({ rows, channel, propWidth, propsImageWidth }) => {
   const newsList = news
     ? news.map((newsItem, index) => (
       <div key={index} className="imageBlock">
-        <Link to={`/details_1/${newsItem.title}/${channel}/${rows}`} target="_blank">
+        <a href={`${newsItem.url}`} target="_blank">
         <div className="custom-image">
           <img style={styleImage} alt="新闻" src={newsItem.pic} />
         </div>
@@ -37,7 +36,7 @@ const PCNewsImageBlock = ({ rows, channel, propWidth, propsImageWidth }) => {
           <p key="2">{newsItem.src}</p>
           <p key="3">{newsItem.time}</p>
         </div>
-        </Link>
+        </a>
       </div>
     ))
     : '没有加载到任何新闻'

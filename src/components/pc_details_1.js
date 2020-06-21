@@ -7,10 +7,10 @@ const PCDetails_1 = props => {
   let title = props.match.params.title
   let channel = props.match.params.channel
   let rows = props.match.params.channel
-    // useEffect(() => {
-    //   Axios.get(`bin/news/get?&channel=${channel}&num=${rows}&appkey=37f764932fa9274d`)
-    //     .then(data => setNews(data.data.result.list))
-    // }, [channel, rows])
+    useEffect(() => {
+      Axios.get(`bin_1/news/get?&channel=${channel}&num=${rows}&appkey=37f764932fa9274d`)
+        .then(data => setNews(data.data.result.list))
+    }, [channel, rows])
   return(
     <>
       <PCHeader />

@@ -28,5 +28,14 @@ module.exports = function (app) {
         secure: false,
       }
     ),
+      createProxyMiddleware(
+          '/bin_1/details_1',
+          {
+              target: 'https://api.binstd.com',
+              pathRewrite: { '^/bin': '' },
+              changeOrigin: true,     // target是域名的话，需要这个参数，
+              secure: false,
+          }
+      ),
     )
 };
