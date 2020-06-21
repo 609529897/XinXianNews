@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import MediaQuery from 'react-responsive'
 import PCIndex from './components/pc_index'
